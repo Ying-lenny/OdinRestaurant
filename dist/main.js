@@ -1,0 +1,1 @@
+(()=>{"use strict";!function(){const t=document.getElementById("content");t.textContent="",t.appendChild(function(){const t=document.createElement("div");return t.classList.add("home"),t.appendChild(function(t){const n=document.createElement("p");return n.textContent="Best Pizza in your country",n}()),t}())}()})();
