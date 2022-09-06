@@ -2,17 +2,24 @@ import _ from 'lodash';
 import printMe from './print.js';
 
  function component() {
-    const element = document.createElement('div');
+    const restaurantContainer = document.createElement('div');
+    const menu = document.createElement('div')
     const btn = document.createElement('button');
 
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+    //Container for all divs
+    restaurantContainer.innerHTML = _.join(['Hello', 'webpack'], ' ');
+    restaurantContainer.classList.add('restaurant-container')
+
+    menu.innerHTML = ("Hi There");
+    menu.classList.add('menu-container')
 
     btn.innerHTML = 'Click me and check the console!';
     btn.onclick = printMe;
 
-    element.appendChild(btn);
+    restaurantContainer.appendChild(btn);
+    restaurantContainer.append(menu)
     
-    return element;
+    return restaurantContainer;
  }
 
  document.body.appendChild(component());
