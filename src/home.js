@@ -28,7 +28,7 @@ function menu() {
     menuHeader.innerText="Menu";
 
     menu.appendChild(menuHeader);
-    menu.append(createRecipe("PotatoSoup"));
+    menu.append(createRecipe("Potato Soup", "It good"));
     return menu;
 }
 
@@ -40,8 +40,9 @@ function createParagraph(text) {
 }
 
 //Generates a recipe based on a name and description
-function createRecipe(name) {
+function createRecipe(name, description) {
     const menuItem = document.createElement("div")
+    menuItem.classList.add("menu-item")
 
     //Name for recipe
     const recipeName = document.createElement("h2")
@@ -52,8 +53,13 @@ function createRecipe(name) {
     recipeImage.src = `images/${name}.png`
     recipeImage.alt = `${name}`
 
+    //Description for recipe
+    const recipeDescription = document.createElement("p");
+    recipeDescription.textContent = description
+
     menuItem.appendChild(recipeName);
     menuItem.appendChild(recipeImage);
+    menuItem.appendChild(recipeDescription)
 
     return menuItem
 }
