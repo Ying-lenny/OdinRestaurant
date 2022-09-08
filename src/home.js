@@ -31,9 +31,11 @@ function menu() {
 
     menu.appendChild(menuHeader);
     menu.appendChild(menuItems);
-    menuItems.append(createRecipe("Potato Soup", "It good"));
-    menuItems.append(createRecipe("Potato Soup", "It good"));
-    menuItems.append(createRecipe("Potato Soup", "It good"));
+    menuItems.append(createRecipe("Potato Soup", "It soup"));
+    menuItems.append(createRecipe("Chicken Taquito", "It chicken"));
+    menuItems.append(createRecipe("Italian Sloppy", "It Italian"));
+    menuItems.append(createRecipe("Pizza", "It good"));
+
     return menu;
 }
 
