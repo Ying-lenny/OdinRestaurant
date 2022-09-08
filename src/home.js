@@ -22,13 +22,18 @@ function home() {
 //Generates a menu with food items on it
 function menu() {
     const menu = document.createElement('div');
+    const menuItems = document.createElement('div');
     menu.classList.add("menu");
+    menuItems.classList.add("menu-items")
 
     const menuHeader = document.createElement("h1");
     menuHeader.innerText="Menu";
 
     menu.appendChild(menuHeader);
-    menu.append(createRecipe("Potato Soup", "It good"));
+    menu.appendChild(menuItems);
+    menuItems.append(createRecipe("Potato Soup", "It good"));
+    menuItems.append(createRecipe("Potato Soup", "It good"));
+    menuItems.append(createRecipe("Potato Soup", "It good"));
     return menu;
 }
 

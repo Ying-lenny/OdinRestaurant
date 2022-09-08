@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    background-color: gray;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+.menu, .home {
+    background-color: #736773;
+}
+
+.menu-items {
+    display: grid;
+    grid-auto-flow: column;
+}
+
+.menu img {
+    width: 30%;
+    max-width: 100%;  
+    height: auto;  
+}
