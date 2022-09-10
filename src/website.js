@@ -1,4 +1,5 @@
 import loadContact from "./contact";
+import loadHome from "./home";
 
 function navbar() {
 
@@ -23,29 +24,6 @@ function createLink(link) {
     return navbarLink
 }
 
-function home() {
-
-    //Home
-    //Creates a div with the home class
-    const home = document.createElement('div');
-    home.classList.add("home");
-
-    //Created the header for the home
-    const homeHeader = document.createElement("h1")
-    homeHeader.innerText="Welcome to restaurant"
-
-    //Creates and sources image for the home page
-    const chefImage = document.createElement("img");
-    chefImage.src = "images/chef.png";
-    chefImage.alt = "Chef"
-
-    //Appends everthing needed to the home paragraph
-    home.appendChild(homeHeader);
-    home.appendChild(createParagraph("Best Pizza in your country"));
-    home.appendChild(chefImage);
-    return home;
-}
-
 //Menu
 //Generates a menu with food items on it
 function menu() {
@@ -65,13 +43,6 @@ function menu() {
     menuItems.append(createRecipe("Pizza", "It good"));
 
     return menu;
-}
-
-//Generates a paragraph with text fed into the function
-function createParagraph(text) {
-    const paragraph = document.createElement("p");
-    paragraph.textContent = text;
-    return paragraph;
 }
 
 //Generates a recipe based on a name and description
@@ -107,15 +78,15 @@ function createMain() {
 }
 
 //Clears any existing content and loads the home class
-function loadHome() {
+function intitialize() {
     const content = document.getElementById("content");
 
     content.appendChild(navbar());
     content.appendChild(createMain())
     
-    main.appendChild(home());
+    loadHome();
     main.appendChild(menu());
     loadContact();
 }
 
-export default loadHome;
+export default intitialize;
