@@ -1,3 +1,26 @@
+function navbar() {
+
+    //Navbar
+    //Generates a navbar at the top of the page
+    const navbar = document.createElement('div')
+    navbar.classList.add('navbar')
+
+    navbar.append(createLink('Link1'));
+    navbar.append(createLink('Link2'));
+    navbar.append(createLink('Link3'));
+
+    return navbar;
+}
+
+function createLink(link) {
+    const navbarLink = document.createElement('button');
+    navbarLink.classList.add('navlinks');
+    navbarLink.setAttribute(`onclick`, `console.log("${link}");`)
+    navbarLink.innerText = (link)
+
+    return navbarLink
+}
+
 function home() {
 
     //Home
@@ -113,11 +136,21 @@ function createContact(name) {
     return contactItem;
 }
 
+function createMain() {
+    const main = document.createElement("main");
+    main.classList.add("main");
+    main.setAttribute("id", "main");
+    return main;
+}
+
 
 //Clears any existing content and loads the home class
 function loadHome() {
-    const main = document.getElementById("content");
-    main.textContent = "";
+    const content = document.getElementById("content");
+    content.textContent = "";
+    content.appendChild(navbar());
+    content.appendChild(createMain())
+    
     main.appendChild(home());
     main.appendChild(menu());
     main.appendChild(contact());
