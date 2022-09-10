@@ -12,6 +12,8 @@ function createNavbar() {
     homeButton.classList.add('button-nav');
     homeButton.textContent = 'Home';
     homeButton.addEventListener('click', (e) => {
+        if (e.target.classList.contains("active")) return;
+        setActiveButton(homeButton)
         loadHome();
     })
 
@@ -20,6 +22,8 @@ function createNavbar() {
     menuButton.classList.add('button-nav');
     menuButton.textContent = 'Menu';
     menuButton.addEventListener('click', (e) => {
+        if (e.target.classList.contains("active")) return;
+        setActiveButton(menuButton)
         loadMenu();
     })
 
@@ -28,6 +32,8 @@ function createNavbar() {
     contactButton.classList.add('button-nav');
     contactButton.textContent = 'Contact';
     contactButton.addEventListener('click', (e) => {
+        if (e.target.classList.contains("active")) return;
+        setActiveButton(contactButton)
         loadContact();
     })
 
@@ -37,6 +43,18 @@ function createNavbar() {
 
     return navbar;
 }
+
+function setActiveButton(button) {
+    const buttons = document.querySelectorAll(".button-nav");
+  
+    buttons.forEach((button) => {
+      if (button !== this) {
+        button.classList.remove("active");
+      }
+    });
+  
+    button.classList.add("active");
+  }
 
 function createMain() {
     const main = document.createElement("main");
