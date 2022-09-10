@@ -2,27 +2,40 @@ import loadContact from "./contact";
 import loadHome from "./home";
 import loadMenu from "./menu";
 
-function navbar() {
-
-    //Navbar
-    //Generates a navbar at the top of the page
+//Generates a navbar for the website
+function createNavbar() {
     const navbar = document.createElement('div')
     navbar.classList.add('navbar')
 
-    navbar.append(createLink('Link1'));
-    navbar.append(createLink('Link2'));
-    navbar.append(createLink('Link3'));
+    //Creates a button on the navbar for the menu
+    const homeButton = document.createElement('button');
+    homeButton.classList.add('button-nav');
+    homeButton.textContent = 'Home';
+    homeButton.addEventListener('click', (e) => {
+        loadHome();
+    })
+
+    //Creates a button on the navbar for the menu
+    const menuButton = document.createElement('button');
+    menuButton.classList.add('button-nav');
+    menuButton.textContent = 'Menu';
+    menuButton.addEventListener('click', (e) => {
+        loadMenu();
+    })
+
+    //Creates a button on the navbar for the menu
+    const contactButton = document.createElement('button');
+    contactButton.classList.add('button-nav');
+    contactButton.textContent = 'Contact';
+    contactButton.addEventListener('click', (e) => {
+        loadContact();
+    })
+
+    navbar.appendChild(homeButton);
+    navbar.appendChild(menuButton);
+    navbar.appendChild(contactButton);
 
     return navbar;
-}
-
-function createLink(link) {
-    const navbarLink = document.createElement('button');
-    navbarLink.classList.add('navlinks');
-    navbarLink.setAttribute(`onclick`, `console.log("${link}");`)
-    navbarLink.innerText = (link)
-
-    return navbarLink
 }
 
 function createMain() {
@@ -36,12 +49,10 @@ function createMain() {
 function intitialize() {
     const content = document.getElementById("content");
 
-    content.appendChild(navbar());
+    content.appendChild(createNavbar());
     content.appendChild(createMain())
     
     loadHome();
-    loadMenu();
-    loadContact();
 }
 
 export default intitialize;

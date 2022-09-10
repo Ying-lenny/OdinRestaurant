@@ -39,7 +39,7 @@ function createContact(name) {
 
 function loadContact() {
     const main = document.getElementById('main')
-    // main.textContent="";
+    main.textContent="";
     main.appendChild(contact())
 }
 

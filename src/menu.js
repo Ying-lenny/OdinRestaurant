@@ -46,7 +46,7 @@ function createRecipe(name, description) {
 
 function loadMenu() {
     const main = document.getElementById('main')
-    // main.textContent="";
+    main.textContent="";
     main.appendChild(menu())
 }
 
